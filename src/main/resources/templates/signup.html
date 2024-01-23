@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+
+<body>
+    <section>
+        <video id="rain-video" src="/video/raining.mp4" loop autoplay muted type="video/mp4"></video>
+
+        <div class="container">
+			<!--gửi dữ liệu đến đường method có đường link /musicweb/register với method là post-->
+            <form th:action="@{/musicweb/signup}" th:object="${user}" method="post">
+                <h2>Sign up</h2>
+                <div class="input-field">
+                    <input type="text" th:field="*{fullName}" required>
+                    <label for="">Full Name</label>
+                    <i class="bi bi-person-fill"></i>
+                </div>
+
+                <div class="input-field">
+                    <input type="email" th:field="*{email}" required>
+                    <label for="">Email</label>
+                    <i class="bi bi-envelope-fill"></i>
+                </div>
+
+                <div class="input-field">
+                    <input id="password" type="password" th:field="*{password}" required>
+                    <label for="">Password</label>
+                    <i class="bi bi-lock-fill"></i>
+                </div>
+
+                <div class="input-field">
+                    <input id="repeatpassword" type="password" required oninput="checkPasswordMatch()">
+                    <label for="">Repeat your password</label>
+                    <i id="valid" class="bi bi-lock"></i>
+                </div>
+
+                <div class="terms">
+                    <label for="">
+                        <input type="checkbox" required>
+                        I agree all statements in
+                        <a href="#">Terms of service</a>
+                    </label>
+                </div>
+
+                <div class="register">
+                    <button id="register" type="submit">Register</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <script src="/js/signup.js"></script>
+</body>

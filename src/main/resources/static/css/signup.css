@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad&family=Poppins&family=Rubik&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+#rain-video {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-position:center;
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 550px;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.container h2 {
+    font-size: 30px;
+    text-align: center;
+    padding: 0 0 5px 0;
+}
+
+.container .input-field {
+    position: relative;
+    width: 350px;
+    margin: 20px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.container .input-field label {
+    position: absolute;
+    font-size: 17px;
+    top: 50%;
+    left: 5px;
+    pointer-events: none;
+    transition: all .5s;
+}
+
+.container .input-field i {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    font-size: larger;
+}
+
+.container .input-field input {
+    font-size: 14px;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 10px 10px 0 5px;
+}
+
+.container .input-field input:focus ~label {
+    top: -5px;
+}
+
+.container .input-field input:valid ~label {
+    top: -5px;
+}
+
+.terms {
+    margin: 30px 0 5px 0;
+    font-size: small;
+    display: flex;
+    color: #fff;
+    justify-content: left;
+}
+
+.terms a {
+    margin-left: 0px;
+    color: #fff;
+}
+
+.container .register button {
+    padding: 5px 5px 5px 5px;
+    background-color: #00FFFF;
+    width: fit-content;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: black;
+}
+
+.container .register button:hover {
+    box-shadow: 1px 5px 7px 1px rgba(100, 169, 209, 0.5);
+}
